@@ -17,18 +17,18 @@ public class ShowConsole {
 
     
     
-    /* public int inputCode(){
-        System.out.println("Digite el codigo a buscar: ");
+     public int inputCode(){
+        //System.out.println("Digite el codigo a buscar: ");
         int code = scanner.nextInt();
         return code;
-    } */
+    } 
 
     public String inputName() {
-        System.out.println("Digite el nombre a buscar: ");
+        //System.out.println("Digite el nombre a buscar: ");
         if (scanner.hasNextLine()) {
             return scanner.nextLine();
         }
-        return ""; 
+        return ""; // Devuelve una cadena vacía si no hay entrada
     }
     
     public void showMessage(String message){
