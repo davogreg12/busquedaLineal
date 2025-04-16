@@ -1,6 +1,8 @@
 
 import views.ShowConsole;
 
+import java.util.Scanner;
+
 import controllers.MetodosBusqueda;
 
 import models.Person;
@@ -14,7 +16,9 @@ public class App {
 
     
     public static void main(String[] args) throws Exception {
-        
+
+        Scanner scanner = new Scanner(System.in);
+
         Person[] persons = new Person[7]; // Creamos un array de personas
         persons[0] = new Person(134, "Juanito");
         persons[1] = new Person(215, "Pedro"); 
@@ -25,10 +29,25 @@ public class App {
         persons[6] = new Person(705, "Luisa");
         MetodosBusqueda mB = new MetodosBusqueda();
 
+        for (int i = 0; i < persons.length; i++) {
+            System.out.println("Persona: " + persons[i].getName() + "             -Codigo: " + persons[i].getCode());
+        }
+
         mB.metodoBusquedaLineal(persons);
 
+        String continuar = "si";
+
+        while (continuar.equalsIgnoreCase("si")) {
+            mB.showPersonByName(); // Llamar al método para buscar por nombre
+            System.out.println("¿Desea buscar otra persona? (si/no): ");
+            continuar = scanner.nextLine(); // Leer si el usuario quiere continuar
+        }
+    
+        System.out.println("Programa finalizado.");
+        
         // Llamar al método showPerson para buscar una persona
-        mB.showPerson();
+        //mB.showPerson();
+        
     }  
     
 }
