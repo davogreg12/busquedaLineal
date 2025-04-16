@@ -15,19 +15,27 @@ public class ShowConsole {
         System.out.println("*** Metodos De Busqueda ***");
     }
 
-    public int inputCode(){
+    
+    
+    /* public int inputCode(){
         System.out.println("Digite el codigo a buscar: ");
         int code = scanner.nextInt();
         return code;
-    }
+    } */
 
+    public String inputName() {
+        System.out.println("Digite el nombre a buscar: ");
+        if (scanner.hasNextLine()) {
+            return scanner.nextLine();
+        }
+        return ""; 
+    }
+    
     public void showMessage(String message){
         System.out.println(message);
     }
 
-    public String inputName(){
-        System.out.println("Digite el nombre a buscar: ");
-        String name = scanner.nextLine();
-        return name;
-    }
+    
+
+    
 }
